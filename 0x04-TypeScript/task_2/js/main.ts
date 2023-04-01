@@ -45,3 +45,42 @@ function createEmployee(salary: number | string): Director | Teacher {
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
+
+
+
+
+
+
+//Creating Functions Specific to employees
+interface Employee {
+  name: string;
+  title: string;
+}
+
+interface Director extends Employee {
+  department: string;
+}
+
+interface Teacher extends Employee {
+  subject: string;
+}
+
+function isDirector(employee: Employee): employee is Director {
+  return (employee as Director).department !== undefined;
+}
+
+function executeWork(employee: Employee) {
+  if (isDirector(employee)) {
+    workDirectorTasks(employee);
+  } else {
+    workTeacherTasks(employee);
+  }
+}
+
+function workDirectorTasks(director: Director) {
+  console.log(`${director.name} is managing the ${director.department} department.`);
+}
+
+function workTeacherTasks(teacher: Teacher) {
+  console.log(`${teacher.name} is teaching ${teacher.subject}.`);
+}
