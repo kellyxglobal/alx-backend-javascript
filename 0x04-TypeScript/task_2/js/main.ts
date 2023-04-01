@@ -84,3 +84,26 @@ function workDirectorTasks(director: Director) {
 function workTeacherTasks(teacher: Teacher) {
   console.log(`${teacher.name} is teaching ${teacher.subject}.`);
 }
+
+
+
+//Task 7: String Literal types
+type Subjects = "Math" | "History"; // Define a String literal type named Subjects
+
+function teachClass(todayClass: Subjects): string { // Define the teachClass function
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  } else if (todayClass === "History") {
+    return "Teaching History";
+  } else {
+    throw new Error(`Invalid subject: ${todayClass}`);
+  }
+}
+const mathClass: Subjects = "Math";
+console.log(teachClass(mathClass)); // Output: Teaching Math
+
+const historyClass: Subjects = "History";
+console.log(teachClass(historyClass)); // Output: Teaching History
+
+// The following line will cause a compile-time error because "Science" is not a valid value for Subjects
+// const scienceClass: Subjects = "Science";
