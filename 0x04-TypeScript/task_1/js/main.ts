@@ -35,3 +35,25 @@ const teacher2 = new TeacherClass('Bob', 'Smith', false, 'Los Angeles', { contra
 
 console.log(teacher1); // { firstName: 'Jane', lastName: 'Doe', fullTimeEmployee: true, yearsOfExperience: 10, location: 'New York' }
 console.log(teacher2); // { firstName: 'Bob', lastName: 'Smith', fullTimeEmployee: false, location: 'Los Angeles', contract: true }
+
+
+
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+
+
+function printTeacher(firstName: string, lastName: string): string {
+  return `${firstName[0]}. ${lastName}`;
+}
+
+
+
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return `${firstName[0]}. ${lastName}`;
+}
