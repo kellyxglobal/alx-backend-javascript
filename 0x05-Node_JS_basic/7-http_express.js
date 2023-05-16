@@ -1,4 +1,4 @@
-const express = require('express');
+const express = requiire('express');
 const fs = require('fs');
 
 const app = express();
@@ -8,7 +8,7 @@ const DB_FILE = process.argv.length > 2 ? process.argv[2] : '';
 /**
  * Counts the students in a CSV data file.
  * @param {String} dataPath The path to the CSV data file.
- * @author Bezaleel Olakunori <https://github.com/B3zaleel>
+ * @authorKelechi Anyaegbu <https://github.com/kellyxglobal>
  */
 const countStudents = (dataPath) => new Promise((resolve, reject) => {
   if (!dataPath) {
@@ -93,4 +93,4 @@ app.listen(PORT, () => {
   console.log(`Server listening on PORT ${PORT}`);
 });
 
-module.exports = app;
+module.exports = app;;
